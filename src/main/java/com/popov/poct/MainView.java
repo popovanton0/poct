@@ -286,8 +286,12 @@ public class MainView extends CreatorView {
 
                 } catch (Exception e) {
                     Alert alert2 = new Alert(Alert.AlertType.INFORMATION);
-                    alert2.setHeaderText("Пожалуйста, отправьте e-mail на адрес help_review@mail.ru:");
-                    alert2.getDialogPane().setContent(new TextArea(textArea.getText() + "\nuid: " + settings.getUid()));
+                    alert2.setHeaderText("Пожалуйста, отправьте e-mail на адрес help_review@mail.ru\n со следующим текстом:");
+                    alert2.getDialogPane().setContent(new TextArea(
+                            "title: " + name.getText() + "\n" +
+                                    "text: " + textArea.getText() + "\n" +
+                                    "responseEmail: " + email.getText() + "\n" +
+                                    "uid: " + settings.getUid()));
                     alert2.showAndWait();
                 }
             }

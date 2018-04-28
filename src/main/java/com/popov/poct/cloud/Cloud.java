@@ -3,6 +3,7 @@ package com.popov.poct.cloud;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.database.*;
+import com.popov.poct.CreatorView;
 import com.popov.poct.MainView;
 import com.popov.poct.Settings;
 import javafx.application.Platform;
@@ -14,10 +15,14 @@ import javafx.scene.control.TextField;
 import java.awt.*;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.StringBufferInputStream;
 import java.math.BigInteger;
 import java.net.URI;
 import java.security.SecureRandom;
 import java.util.*;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import static org.apache.commons.lang.exception.ExceptionUtils.getStackTrace;
 
@@ -253,7 +258,6 @@ public class Cloud {
     }
 
     public static void sendFeedback(String name, String email, String text, Settings settings) throws Exception {
-
         Map<String, Object> issuesMap = new HashMap<>();
         Map<String, Object> issue = new HashMap<>();
         issue.put("email", email);
@@ -264,7 +268,16 @@ public class Cloud {
         issue.put("issueUid", issueUid);
         issuesMap.put(issueUid, issue);
 
-        issues.updateChildren(issuesMap);
+        CountDownLatch latch = new CountDownLatch(1);
+        AtomicBoolean isSuccess = new AtomicBoolean(false);
+        issues.updateChildren(issuesMap)
+                .addOnSuccessListener(aVoid -> {
+                    isSuccess.set(true);
+                    latch.countDown();
+                })
+                .addOnFailureListener(e -> latch.countDown());
+        latch.await(2, TimeUnit.SECONDS);
+        if (!isSuccess.get()) throw new Exception();
     }
 
     public static String generateUID(int length) {
