@@ -1,0 +1,22 @@
+#treeView .tree-cell:hover {
+    -fx-background-color: rgb(75, 110, 175);/* blue color */
+    -fx-text-fill: white;
+}
+
+.list-view {
+    -fx-background-color: rgb(244, 244, 244);
+}
+
+.list-cell {
+    -fx-background-color: rgb(244, 244, 244);
+    -fx-text-fill: black;
+}
+
+.list-cell:hover {
+    -fx-background-color: rgb(75, 110, 175);/* blue color */
+    -fx-text-fill: white;
+}
+
+::selection {
+    -background: #ffb7b7;
+}

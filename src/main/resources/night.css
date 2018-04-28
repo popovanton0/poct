@@ -1,0 +1,105 @@
+.menu-bar{
+  -fx-background-color: rgb(49, 51, 53); /*MIDDLE_DARK_COLOR*/
+  -fx-text-fill: white;
+}
+
+.menu-bar .label {
+    -fx-text-fill: white;
+}
+
+.menu:hover {
+    -fx-background-color: rgb(75, 110, 175);/* blue color */
+}
+
+.menu-item:focused {
+    -fx-background-color: rgb(75, 110, 175);/* blue color */
+}
+
+
+.context-menu {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
+    -fx-background-color: rgb(49, 51, 53); /*MIDDLE_DARK_COLOR*/
+}
+
+#pane {
+    -fx-background-color: rgb(43, 43, 43); /*HEAVY_DARK_COLOR*/
+}
+
+#treeView .tree-cell {
+    -fx-background-color: rgb(60, 63, 65); /*LIGHT_DARK_COLOR*/
+    -fx-text-fill: white;
+}
+
+#treeView .tree-cell:hover {
+    -fx-background-color: rgb(75, 110, 175);/* blue color */
+}
+
+#treeView .tree-cell:focused {
+    -fx-background-color: rgb(43, 43, 43); /*HEAVY_DARK_COLOR*/
+}
+
+.list-view {
+    -fx-background-color: rgb(43, 43, 43); /*HEAVY_DARK_COLOR*/
+}
+
+.list-cell {
+    -fx-background-color: rgb(43, 43, 43); /*HEAVY_DARK_COLOR*/
+    -fx-text-fill: white;
+}
+
+.list-cell:hover {
+    -fx-background-color: rgb(75, 110, 175);/* blue color */
+    -fx-text-fill: white;
+}
+
+
+
+
+#creatorPane {
+    -fx-background-color: rgb(60, 63, 65); /*LIGHT_DARK_COLOR*/
+    -fx-text-fill: white;
+}
+
+.label {
+    -fx-text-fill: white;
+}
+
+.text-area {
+    -fx-text-fill: white;
+}
+
+.text-area .content {
+    -fx-background-color: rgb(110, 110, 110); /*VERY_LIGHT_DARK_COLOR*/
+}
+
+.text-input {
+    -fx-text-fill: white;
+    -fx-background-color: rgb(110, 110, 110); /*VERY_LIGHT_DARK_COLOR*/
+}
+
+.radio-button {
+    -fx-text-fill: white;
+}
+
+.radio-button .radio {
+    -fx-background-color: rgb(200, 200, 200);
+}
+
+.radio-button .radio:hover {
+    -fx-background-color: rgb(150, 150, 150);
+}
+
+.button {
+    -fx-background-color: rgb(43, 43, 43); /*HEAVY_DARK_COLOR*/
+    -fx-text-fill: white;
+}
+
+.button:hover {
+    -fx-background-color: #3a3a3a;
+}
+
+.button:pressed, .button:default:hover:pressed {
+  -fx-background-color: rgb(110, 110, 110); /*VERY_LIGHT_DARK_COLOR*/;
+  -fx-text-fill: #1d1d1d;
+}
+
