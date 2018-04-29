@@ -21,6 +21,10 @@ import javafx.stage.Stage;
 
 import static com.popov.poct.cloud.Cloud.errorReport;
 
+/**
+ * Created by popov on 24.07.2016.
+ */
+
 public class Main extends Application {
     private Settings settings;
 
