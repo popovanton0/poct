@@ -33,7 +33,7 @@ public class Main extends Application {
     }
 
     public void start(Stage primaryStage) {
-        //setProxy();
+        setProxy();
         try {
             init();
             MainView mainView = new MainView(primaryStage, settings);
