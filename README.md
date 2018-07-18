@@ -5,6 +5,6 @@ You can get access to ROST by using [this](http://www.ir-tech.ru/?products=netsc
 [this](http://www.ir-tech.ru/?products=ais-setevoj-gorod-obrazovanie) or 
 [this](http://www.ir-tech.ru/?products=ais-setevoj-region-obrazovanie).
 
-https://tr.im/rost
+https://poct-b18fd.firebaseapp.com
 
 [User Manual](https://poct-b18fd.firebaseapp.com/docs.html)
